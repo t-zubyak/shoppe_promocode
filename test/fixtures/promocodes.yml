@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  code: MyString
+  discount_type: MyString
+  discout_value: 1.5
+  usage_limit: 1
+  times_used: 1
+
+two:
+  title: MyString
+  code: MyString
+  discount_type: MyString
+  discout_value: 1.5
+  usage_limit: 1
+  times_used: 1

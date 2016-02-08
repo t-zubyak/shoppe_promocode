@@ -1,0 +1,31 @@
+= form_for @promocode do |f|
+  = f.error_messages
+  = field_set_tag 'Promocode Details' do
+    .splitContainer
+      %dl.third
+        %dt= f.label :title
+        %dd= f.text_field :title, :class => 'focus text'
+      %dl.third
+        %dt= f.label :code
+        %dd= f.text_field :code, :class => 'text'
+      %dl.third
+        %dt= f.label :usage_limit
+        %dd= f.number_field :usage_limit, :class => 'text'
+    .splitContainer
+      %dl.quarter
+        %dt= f.label :discount_type
+        %dd= f.select :discount_type, options_for_select([['Percentage', 'percentage'], ['Dollar Value', 'dollar']], @promocode.discount_type), {}, {:class => 'chosen'}
+      %dl.quarter
+        %dt= f.label :discount_value
+        %dd= f.text_field :discount_value, :class => 'text'
+      %dl.quarter
+        %dt= f.label :active_start_date
+        %dd= f.date_select :active_start_date, :class => 'chosen'
+      %dl.quarter
+        %dt= f.label :active_end_date
+        %dd= f.date_select :active_end_date, :class => 'chosen'
+  %p.submit
+    - unless @promocode.new_record?
+      %span.right= link_to "Delete", @promocode, :class => 'button purple', :method => :delete, :data => {:confirm => "Are you sure you wish to remove this promocode?"}
+    = f.submit :class => 'button green'
+    = link_to "Cancel", :promocodes, :class => 'button'

@@ -1,0 +1,29 @@
+- @page_title = "Promocodes"
+
+= content_for :header do
+  %p.buttons=link_to "New promocode", :new_promocode, :class => 'button green'
+  %h2.products Promocodes
+
+.table
+  %table.data
+    %thead
+      %tr
+        %th Title
+        %th Code
+        %th Discount
+        %th Usage Limit
+        %th Times Used
+        %th Status
+    %tbody
+      - if @promocodes.empty?
+        %tr.empty
+          %td{colspan:6} No promocodes to display.
+      - else
+        - for code in @promocodes
+          %tr
+            %td= link_to code.title, [:edit, code]
+            %td= code.code
+            %td= "#{code.discount_value} #{code.display_discount_type}"
+            %td= code.usage_limit
+            %td= code.times_used
+            %td= code.active? ? "Active" : "Not active"
