@@ -1,4 +1,4 @@
-= ShoppePromocode
+#ShoppePromocode
 
 ShoppePromocode is a plugin that adds basic Coupon/Promocode functionality to a Shoppe e-commerce platform.
 
@@ -69,5 +69,5 @@ Should be good to go. Please let me know if you have any problems. I'll be more 
 Thank you for being interested in using this gem.
 
 #TODO
-  - Tests
-  - Discounts per item
+- Tests
+- Discounts per item
