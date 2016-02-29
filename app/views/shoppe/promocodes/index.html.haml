@@ -1,8 +1,8 @@
-- @page_title = "Promocodes"
+- @page_title = "Promo Codes"
 
 = content_for :header do
-  %p.buttons=link_to "New promocode", :new_promocode, :class => 'button green'
-  %h2.products Promocodes
+  %p.buttons=link_to "New Promo Code", :new_promocode, :class => 'button green'
+  %h2.products Promo Codes
 
 .table
   %table.data
@@ -17,13 +17,13 @@
     %tbody
       - if @promocodes.empty?
         %tr.empty
-          %td{colspan:6} No promocodes to display.
+          %td{colspan: 6} No promo codes to display.
       - else
         - for code in @promocodes
           %tr
             %td= link_to code.title, [:edit, code]
             %td= code.code
-            %td= "#{code.discount_value} #{code.display_discount_type}"
+            %td #{code.discount_value}#{code.display_discount_type}
             %td= code.usage_limit
             %td= code.times_used
             %td= code.active? ? "Active" : "Not active"
