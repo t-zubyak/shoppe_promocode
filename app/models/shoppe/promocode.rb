@@ -12,11 +12,11 @@ module Shoppe
     end
 
     def redeem_coupon
-      update_attributes(times_used: times_used+1)
+      update_attributes(times_used: times_used + 1)
     end
 
     def display_discount_type
-      discount_type == "percentage" ? "%" : "$"
+      discount_type == "percentage" ? "%" : Shoppe.settings.currency_unit
     end
 
     def active?

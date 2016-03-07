@@ -1,5 +1,6 @@
 module Shoppe
   class PromocodesController < Shoppe::ApplicationController
+
     before_filter { @active_nav = :promocodes }
 
     def index
@@ -13,7 +14,7 @@ module Shoppe
     def create
       @promocode = Shoppe::Promocode.new(promocode_params)
       if @promocode.save
-        redirect_to :promocodes, flash: {notice: 'Promocode has been created successfully'}
+        redirect_to :promocodes, flash: {notice: 'Promo code has been created successfully'}
       else
         render 'new'
       end
@@ -22,7 +23,7 @@ module Shoppe
     def destroy
       @promocode = Shoppe::Promocode.find params[:id]
       @promocode.destroy
-      redirect_to @promocode, :notice => "Promocode has been removed successfully"
+      redirect_to @promocode, :notice => "Promo code has been removed successfully"
     end
 
     def edit
@@ -32,7 +33,7 @@ module Shoppe
     def update
       @promocode = Shoppe::Promocode.find(params[:id])
       if @promocode.update(promocode_params)
-        redirect_to [:edit, @promocode], :flash => {:notice => "Promocode has been updated successfully"}
+        redirect_to [:edit, @promocode], :flash => {:notice => "Promo code has been updated successfully"}
       else
         render :action => "edit"
       end
