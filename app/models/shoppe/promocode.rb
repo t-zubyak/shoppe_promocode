@@ -30,5 +30,9 @@ module Shoppe
     def stock_control?
       false
     end
+
+    def sku
+      code
+    end
   end
 end
